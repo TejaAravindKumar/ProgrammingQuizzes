@@ -3,7 +3,6 @@ package AssesmentsPractice.A3007;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class CurrencyConverter {
     public static void main(String[] args) {
@@ -16,7 +15,7 @@ public class CurrencyConverter {
         map.put("omr",208.18);
         map.put("cny",11.82);
         map.put("cad",62.15);
-
+        map.put("inr",1.0);
         Scanner in = new Scanner(System.in);
         System.out.println("Enter the Currency Name : ");
         String input = in.nextLine();
@@ -30,7 +29,6 @@ public class CurrencyConverter {
     }
 
     private static Double convertCurrency(Map<String, Double> map, String input, String output, Double value) {
-        Double result = 0.0;
         Double res1 = 0.0;
         Double res2 = 0.0;
         for (Map.Entry<String, Double> entry: map.entrySet()) {
@@ -41,7 +39,7 @@ public class CurrencyConverter {
                 res2 = entry.getValue();
             }
         }
-        return result;
+        return (res2 * value)/res1;
 
     }
 
