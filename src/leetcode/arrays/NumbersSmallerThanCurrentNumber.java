@@ -10,9 +10,8 @@ public class NumbersSmallerThanCurrentNumber {
     }
     public static int[] smallerNumbersThanCurrent(int[] nums) {
         int[] arr = new int[nums.length];
-        int count = 0;
         for (int i = 0; i < arr.length; i++) {
-            count = 0;
+            int count = 0;
             for (int j = 0; j < arr.length; j++) {
                 if (nums[i] > nums[j]){
                     count++;
